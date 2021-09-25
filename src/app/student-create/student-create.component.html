@@ -1,0 +1,20 @@
+<form (ngSubmit)="onAdd()" >
+    <div class="form-group">
+        <label for="nameip">Name</label>
+        <input type="text" class="form-control" id="nameip" aria-describedby="emailHelp"
+            placeholder="Enter Name"  [(ngModel)]="stdName" name="stdName">
+        <small id="emailHelp" class="form-text text-muted">Add your name.</small>
+    </div>
+
+    <div class="form-group">
+        <label for="feeip">Fees</label>
+        <input type="number" class="form-control" id="feeip" placeholder="Fees" name="stdFee"  [(ngModel)]="stdFee">
+    </div>
+
+    <div class="form-group">
+        <label for="courseip">Course</label>
+        <input type="text" class="form-control" id="courseip" placeholder="Course Enrolled" name="stdCourse" [(ngModel)]="stdCourse">
+    </div>
+    
+    <button type="submit" class="btn btn-primary" >Submit</button>
+</form>

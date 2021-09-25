@@ -1,0 +1,32 @@
+<h3>Student Table</h3>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Fee</th>
+            <th scope="col">Course</th>
+            <th scope="col">Discount</th>
+            <th scope="col">Gst</th>
+            <th scope="col">Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of students">
+            <th scope="row">{{s.stdId}}</th>
+            <td>{{s.stdName}}</td>
+            <td>{{s.stdFee}}</td>
+            <td>{{s.stdCourse}}</td>
+            <td>{{s.stdFeeDisc}}</td>
+            <td>{{s.stdFeeGst}}</td>
+            <td>
+                <button type="button" class="btn btn-secondary" (click)="onDelete(s.stdId)" >Delete</button>
+                <button type="button" class="btn btn-secondary"  >Edit</button>
+            </td>
+        </tr>
+        
+    </tbody>
+<!--     <button type="button" class="btn btn-primary" (click)="onAdd(s.stdId)">Add</button>-->
+</table>
+
