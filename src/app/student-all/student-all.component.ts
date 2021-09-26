@@ -1,6 +1,7 @@
 import { StudentService } from './../student.service';
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../student';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-all',
@@ -10,7 +11,7 @@ import { Student } from '../student';
 export class StudentAllComponent implements OnInit {
 
   students : Student[] =[];
-  constructor(private service:StudentService) { }
+  constructor(private service:StudentService , private router : Router) { }
 
   ngOnInit(): void {
     this.getAllStudents();
@@ -36,6 +37,10 @@ export class StudentAllComponent implements OnInit {
         console.log(error);
       }
     )
+  }
+  onEdit(id:number)
+  {
+    this.router.navigateByUrl(`edit/${id}`);
   }
 
 

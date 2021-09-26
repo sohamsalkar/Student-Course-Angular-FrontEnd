@@ -1,1 +1,27 @@
-<p>student-edit works!</p>
+<div class="container">
+    <h3>Edit STUDENT</h3>
+    <form (ngSubmit)="onUpdate()">
+        <div class="mb-3">
+            <label for="studentName" class="form-label"></label>
+            <input class="form-control" type="text" placeholder="{{s.stdId}}" aria-label="Disabled input example"
+                disabled readonly >
+        </div>
+        <div class="mb-3">
+            <label for="studentName" class="form-label">NAME</label>
+            <input type="text"  [(ngModel)]="s.stdName"  class="form-control" id="studentName" name="studentName">
+        </div>
+        <div class="mb-3">
+            <label for="studentCourse" class="form-label">Course</label>
+            <input type="text" [(ngModel)]="s.stdCourse" class="form-control" id="studentCourse" name="studentCourse">
+        </div>
+        <div class="mb-3">
+            <label for="studentFee" class="form-label">Fee</label>
+            <input type="number" [(ngModel)]="s.stdFee" class="form-control" id="studentFee" name="studentFee">
+        </div>
+        <button type="submit" class="btn btn-success">Update</button>
+    </form>
+</div>
+<!-- 
+[(ngModel)]="{{s.stdFee}}"
+[(ngModel)]="{{s.stdCourse}}"
+[(ngModel)]="{{s.stdName}}" -->

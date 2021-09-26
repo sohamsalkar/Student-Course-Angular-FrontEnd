@@ -27,5 +27,12 @@ export class StudentService {
    onCreateNewStudent(s:any):Observable<any>{
      return this.http.post(`${this.baseUrl}/create`,s,{responseType:"text"});
    }
+
+   getOneStudent(id:number):Observable<Student>{
+     return this.http.get<Student>(`${this.baseUrl}/one/${id}`);
+   }
    
+   onUpdateStudent(u:any):Observable<any>{
+     return this.http.put(`${this.baseUrl}/update`,u,{responseType:"text"});
+   }
 }
